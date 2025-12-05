@@ -8,5 +8,9 @@ export default antfu(
     rules: {
       'ts/explicit-function-return-type': 'off',
     },
+    ignores: [
+      'dist/**',
+      'README.md',
+    ],
   },
 )
