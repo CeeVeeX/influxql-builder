@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.20.0",
-  "description": "_description_",
+  "description": "A TypeScript library for building InfluxQL queries programmatically.",
   "author": "Cee Vee X <ceeveex@hotmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/ceeveex",
