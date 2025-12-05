@@ -36,6 +36,8 @@
     "yaml"
   ],
   "cSpell.words": [
-    "influxql"
+    "influxql",
+    "slimit",
+    "soffset"
   ]
 }
