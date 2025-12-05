@@ -34,7 +34,8 @@
     "start": "tsx src/index.ts",
     "test": "vitest",
     "typecheck": "tsc",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "publish": "pnpm publish"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:cli",
