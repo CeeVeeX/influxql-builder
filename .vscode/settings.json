@@ -36,8 +36,10 @@
     "yaml"
   ],
   "cSpell.words": [
+    "bumpp",
     "influxql",
     "slimit",
-    "soffset"
+    "soffset",
+    "tinyexec"
   ]
 }
