@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { F, SelectBuilder } from '../src/index'
 
-describe('influxql-builder', () => {
+describe('select', () => {
   it('builds simple select', () => {
     const q = new SelectBuilder()
       .select(F.count('output'))
