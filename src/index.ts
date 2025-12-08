@@ -227,9 +227,10 @@ export class WhereBuilder {
    * 区间条件：
    * between(key, [a, b]) → key >= 'a' AND key <= 'b'
    */
-  between(key: string, range: [ Date | string, Date | string]) {
-    const [from, to] = range
-    return this.and(`${quoteIdent(key)} >= ${quoteLiteral(from)} AND ${quoteIdent(key)} <= ${quoteLiteral(to)}`)
+  between(key: string, [from, to]: [Date | string, Date | string]) {
+    return this.and(
+      `${quoteIdent(key)} >= ${quoteLiteral(from, this.params)} AND ${quoteIdent(key)} <= ${quoteLiteral(to, this.params)}`,
+    )
   }
 
   /**
@@ -238,7 +239,9 @@ export class WhereBuilder {
    */
   notBetween(key: string, range: [ Date | string, Date | string]) {
     const [from, to] = range
-    return this.and(`(${quoteIdent(key)} < ${quoteLiteral(from)} OR ${quoteIdent(key)} > ${quoteLiteral(to)})`)
+    return this.or(
+      `${quoteIdent(key)} < ${quoteLiteral(from, this.params)} OR ${quoteIdent(key)} > ${quoteLiteral(to, this.params)}`,
+    )
   }
 
   /** 追加 AND 条件：WHERE (...) AND (...) */
