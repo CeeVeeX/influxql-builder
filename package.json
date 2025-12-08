@@ -1,7 +1,7 @@
 {
   "name": "influxql-builder",
   "type": "module",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "packageManager": "pnpm@10.20.0",
   "description": "A TypeScript library for building InfluxQL queries programmatically.",
   "author": "Cee Vee X <ceeveex@hotmail.com>",
