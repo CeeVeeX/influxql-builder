@@ -26,4 +26,17 @@ export const F = {
   top: (x: any, n = 1) => fn('TOP', toExpr(x), raw(String(n))),
   bottom: (x: any, n = 1) => fn('BOTTOM', toExpr(x), raw(String(n))),
   percentile: (x: any, p: number) => fn('PERCENTILE', toExpr(x), raw(String(p))),
+
+  // transformation functions
+  /**
+   *
+   * @param field_expression Expression to identify one or more fields to operate on. Can be a field key, constant, regular expression, or wildcard (*). Supports all field types.
+   * @param unit Unit of time to return the elapsed time in. Supports duration literals. Default is 1ns (nanoseconds).
+   * @returns
+   */
+  elapsed: (field_expression: string, unit?: string) => {
+    if (unit)
+      return fn('ELAPSED', toExpr(field_expression), raw(unit))
+    return fn('ELAPSED', toExpr(field_expression))
+  },
 }
