@@ -1,4 +1,4 @@
-# InfluxQL / InfluxDB 3 SQL 查询构造器（Knex 风格）
+# InfluxQL 查询构造器
 
 ## 概览
 
