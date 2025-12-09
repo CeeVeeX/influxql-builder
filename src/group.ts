@@ -14,7 +14,7 @@ import { quoteIdent } from './utils'
 export class GroupByBuilder {
   private parts: string[] = []
 
-  copy(): GroupByBuilder {
+  clone(): GroupByBuilder {
     const gb = new GroupByBuilder()
     gb.parts = [...this.parts]
     return gb

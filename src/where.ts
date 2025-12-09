@@ -20,10 +20,18 @@ export class WhereBuilder {
   constructor(private params?: Params) {}
   parts: string[] = []
 
-  copy(): WhereBuilder {
+  clone(): WhereBuilder {
     const wb = new WhereBuilder(this.params)
     wb.parts = [...this.parts]
     return wb
+  }
+
+  in(key: string, values: ParamValue[]) {
+    if (values.length === 0)
+      return this
+
+    const vals = values.map(v => quoteLiteral(v, this.params)).join(', ')
+    return this.and(`${quoteIdent(key)} IN (${vals})`)
   }
 
   /**

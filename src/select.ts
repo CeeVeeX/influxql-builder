@@ -37,14 +37,14 @@ export class SelectBuilder<T = any> {
   /**
    * 完全复制当前 SelectBuilder 实例（深度拷贝）。
    */
-  copy(): SelectBuilder<T> {
+  clone(): SelectBuilder<T> {
     const sb = new SelectBuilder<T>(this.params)
     sb.fields = [...this.fields]
     sb.fromTable = this.fromTable
     sb.joins = [...this.joins]
-    sb.whereBuilder = this.whereBuilder.copy()
-    sb.groupByBuilder = this.groupByBuilder.copy()
-    sb.orderByBuilder = this.orderByBuilder.copy()
+    sb.whereBuilder = this.whereBuilder.clone()
+    sb.groupByBuilder = this.groupByBuilder.clone()
+    sb.orderByBuilder = this.orderByBuilder.clone()
     sb._limit = this._limit
     sb._offset = this._offset
     sb._slimit = this._slimit

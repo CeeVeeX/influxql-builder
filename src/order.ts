@@ -11,7 +11,7 @@ export type OrderDir = 'ASC' | 'DESC'
 export class OrderByBuilder {
   parts: string[] = []
 
-  copy(): OrderByBuilder {
+  clone(): OrderByBuilder {
     const ob = new OrderByBuilder()
     ob.parts = [...this.parts]
     return ob
