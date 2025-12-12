@@ -11,13 +11,13 @@ export function raw(s: string): Raw {
 
 /**
  * 字段/标识符引用：
- * 如果字段中含有非字母数字字符，则自动加双引号：
+ * 如果字段中含有非字母数字字符，则自动加双引号, 除了 * 号：
  *   abc → abc
  *   user-name → "user-name"
  *   "x" → "\"x\""
  */
 export function quoteIdent(id: string): string {
-  if (/\W/.test(id))
+  if (/\W/.test(id) && id !== '*')
     return `\"${id.replace(/"/g, '\\"')}\"`
   return id
 }
